@@ -18,6 +18,10 @@ const {
     Text,
 } = veil.ui.components
 
+const {
+    h
+} = veil.ui.preact;
+
 const VeilIsCool = () => {
     return (
         <Text>Veil is cool!</Text>
