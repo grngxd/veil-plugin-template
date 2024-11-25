@@ -11,6 +11,7 @@ const {
 } = veil.settings;
 
 export const init = () => {
+    alert("Example Plugin Initialized");
     log("Example Plugin Initialized");
 
     addCustomElement({
@@ -21,6 +22,7 @@ export const init = () => {
 };
 
 export const unload = () => {
+    alert("Example Plugin Unloaded");
     log("Example Plugin Unloaded");
 
     removeCustomElement({
