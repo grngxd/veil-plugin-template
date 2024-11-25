@@ -12,6 +12,9 @@ var {
 var {
   Text
 } = veil.ui.components;
+var {
+  h
+} = veil.ui.preact;
 var VeilIsCool = () => {
   return /* @__PURE__ */ h(Text, null, "Veil is cool!");
 };
