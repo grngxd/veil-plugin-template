@@ -31,8 +31,11 @@ fs.readdirSync(packagesDir).forEach((dir) => {
       entryPoints: [entryFile],
       outfile: path.join(outPath, "index.js"),
       bundle: true,
-      platform: "browser",
+      platform: "node",
       target: "es2020",
+      jsxFactory: "h",
+      jsxFragment: "Fragment",
+      format: "esm",
     })
       .then(() => {
         console.log(`Built ${entryFile} to ${path.join(outPath, "index.js")}`);
