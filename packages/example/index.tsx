@@ -18,12 +18,18 @@ const {
     Text,
 } = veil.ui.components
 
+const VeilIsCool = () => {
+    return (
+        <Text>Veil is cool!</Text>
+    )
+}
+
 export const init = () => {
     alert("Example Plugin Initialized");
     log("Example Plugin Initialized");
 
     addCustomElement({
-        element: renderPreactInReact(() => (<Text>Veil is cool</Text>)),
+        element: renderPreactInReact(VeilIsCool),
         section: "veiliscool",
         searchableTitles: ["section"],
         label: "this is a section",
