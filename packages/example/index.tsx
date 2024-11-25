@@ -29,7 +29,7 @@ export const init = () => {
     log("Example Plugin Initialized");
 
     addCustomElement({
-        element: renderPreactInReact(VeilIsCool),
+        element: () => renderPreactInReact(VeilIsCool),
         section: "veiliscool",
         searchableTitles: ["section"],
         label: "this is a section",
