@@ -7,6 +7,7 @@ var {
   removeCustomElement
 } = veil.settings;
 var init = () => {
+  alert("Example Plugin Initialized");
   log("Example Plugin Initialized");
   addCustomElement({
     section: "veiliscool",
@@ -15,6 +16,7 @@ var init = () => {
   });
 };
 var unload = () => {
+  alert("Example Plugin Unloaded");
   log("Example Plugin Unloaded");
   removeCustomElement({
     section: "veiliscool"
