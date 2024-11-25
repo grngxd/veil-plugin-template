@@ -8,7 +8,10 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "./out",
-        "rootDir": "./packages",
+        "rootDir": "./",
         "declaration": true,
-   } 
+         "jsx": "react",
+         "jsxFactory": "h",
+         "jsxFragmentFactory": "Fragment",
+   }
 }
