@@ -35,6 +35,8 @@ jobs:
             mkdir -p "deployment/$package_name"
             cp "$dir/index.js" "deployment/$package_name/"
             cp "$dir/meta.json" "deployment/$package_name/"
+            echo "you visited a 404, youre supposed to copy and paste this into veil." > "deployment/$package_name/README.md"
+            cat README.md >> "deployment/$package_name/README.md"
           fi
         done
 
@@ -44,3 +46,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./deployment
         publish_branch: gh-pages
+        allow_jekyll: true
