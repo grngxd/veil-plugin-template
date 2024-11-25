@@ -47,3 +47,4 @@ jobs:
         publish_dir: ./deployment
         publish_branch: gh-pages
         allow_jekyll: true
+        
