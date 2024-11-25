@@ -24,17 +24,16 @@ jobs:
       run: pnpm install
 
     - name: Build packages
-      run: |
-        pnpm run build
+      run: pnpm run build
 
     - name: Prepare deployment
       run: |
         mkdir -p deployment
-        for dir in packages/*; do
+        for dir in out/*; do
           if [ -d "$dir" ]; then
             package_name=$(basename "$dir")
             mkdir -p "deployment/$package_name"
-            cp "$dir/dist/*" "deployment/$package_name/"
+            cp "$dir/index.js" "deployment/$package_name/"
             cp "$dir/meta.json" "deployment/$package_name/"
           fi
         done
