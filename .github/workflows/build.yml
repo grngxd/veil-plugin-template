@@ -1,0 +1,47 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build packages
+      run: |
+        pnpm run build
+
+    - name: Prepare deployment
+      run: |
+        mkdir -p deployment
+        for dir in packages/*; do
+          if [ -d "$dir" ]; then
+            package_name=$(basename "$dir")
+            mkdir -p "deployment/$package_name"
+            cp "$dir/dist/*" "deployment/$package_name/"
+            cp "$dir/meta.json" "deployment/$package_name/"
+          fi
+        done
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./deployment
+        publish_branch: gh-pages
