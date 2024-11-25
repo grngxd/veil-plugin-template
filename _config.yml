@@ -6,3 +6,4 @@ relative_links:
   collections: true
 
 markdown: kramdown
+theme: jekyll-theme-minimal
