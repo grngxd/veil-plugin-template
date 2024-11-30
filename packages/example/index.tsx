@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // TODO: add typings for veil
 const {
     log

@@ -1,17 +1,22 @@
 {
    "compilerOptions": {
-        "target": "ESNext",
-        "moduleResolution": "node",
-        "module": "ESNext",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "outDir": "./out",
-        "rootDir": "./",
-        "declaration": true,
-         "jsx": "react",
-         "jsxFactory": "h",
-         "jsxFragmentFactory": "Fragment",
-   }
+       "target": "ESNext",
+       "moduleResolution": "node",
+       "module": "ESNext",
+       "strict": true,
+       "esModuleInterop": true,
+       "skipLibCheck": true,
+       "forceConsistentCasingInFileNames": true,
+       "outDir": "./out",
+       "rootDir": "./",
+       "declaration": true,
+       "jsx": "react",
+       "jsxFactory": "h",
+       "jsxFragmentFactory": "Fragment",
+       "typeRoots": ["./node_modules/@types"]
+   },
+   "include": [
+       "./packages/**/*",
+       "./node_modules/@grng/veil/out/core/global.d.ts"
+   ]
 }
