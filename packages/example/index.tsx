@@ -1,4 +1,9 @@
-// TODO: add typings for veil
+// IMPORTANT!!
+const {
+    h,
+    Fragment
+} = veil.ui.preact;
+
 const {
     log
 } = veil.util;
@@ -14,15 +19,23 @@ const {
 
 const {
     Text,
+    Button,
+    TextBox,
+    Toggle
 } = veil.ui.components
 
 const {
-    h
-} = veil.ui.preact;
+    version,    
+} = veil.veil
 
-const VeilIsCool = () => {
+const Page = () => {
     return (
-        <Text>Veil is cool!</Text>
+        <div>
+            <Text>Veil says hi! ;3 (v{version})</Text>
+            <Button onClick={() => alert("Button clicked!")}>Click Me</Button>
+            <TextBox placeholder="Enter some text..." />
+            <Toggle label="Toggle me" />
+        </div>
     )
 }
 
@@ -31,7 +44,7 @@ export const init = () => {
     log("Example Plugin Initialized");
 
     addCustomElement({
-        element: () => renderPreactInReact(VeilIsCool),
+        element: () => renderPreactInReact(Page),
         section: "veiliscool",
         searchableTitles: ["section"],
         label: "this is a section",
